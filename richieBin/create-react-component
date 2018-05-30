@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ ! -n "$1" ] 
+then
+	echo "You have not input any value for name of the component"
+else
+	componentName=$1
+	mkdir ${componentName} && cd ${componentName} && mkdir actions && touch actions/index.js && touch actions/fetch.js &&mkdir reducers && touch reducers/index.js && touch reducers/fetch.js && touch actionTypes.js && touch container.jsx && mkdir view && touch view/index.jsx && cd .. && echo "create ${componentName} component success!!"
+fi
