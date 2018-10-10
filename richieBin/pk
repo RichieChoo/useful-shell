@@ -1,21 +1,17 @@
 #!/bin/bash
-wsName='ws'
+#没有传参默认关闭WebStorm;
 soName="sogoupinyin"
-if [ -f $1 == "ws"]
+if [ ! -n "$1" ]
 then
 	echo "1"
 	realName="com.intellij.idea.Main"
-elif [ -f $1 == 'ws']
-then
-	echo "3"
 else
-	echo "2"
-	realName=$name
+	realName=$1
 fi	
-#ps aux |grep $realName
-#pid=$(ps aux | grep $realName |awk '{print $2}')
-#echo "程序pid=$pid,即将强制关闭"
+pid=$(ps aux | grep ${realName} |awk '{print $2}')
 
-#kill -9 $pid
+echo "程序pid=${pid},即将强制关闭"
 
-#echo "关闭成功"
+kill -9 ${pid}
+
+echo "关闭成功"
