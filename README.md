@@ -7,13 +7,13 @@ devPush 'commit message'
 
 ```
 
-##fk
+## fk
 force kill some app where it not responses any
 ```
 fk WebStorm
 ```
 
-##net_music
+## net_music
 
 set netEaseMusic global keymap next songs when press ctrl+shift+F11
 
