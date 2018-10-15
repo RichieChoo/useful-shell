@@ -1,0 +1,19 @@
+#!/bin/bash
+#批量杀死进程
+ps aux | grep gnome-terminal | grep -v grep | awk '{print $2}' | xargs kill -9
+echo "init work successful.."
+
+echo "start bff client .."
+cd ~/work/bff/bff-client && gnome-terminal --  bash -c 'npm start;bash' && xdotool windowminimize $(xdotool getactivewindow)
+
+echo "start bff server.."
+cd ~/work/bff/bff-server && gnome-terminal --  bash -c 'npm run dev;bash' && xdotool windowminimize $(xdotool getactivewindow)
+
+
+echo "start test server .."
+cd ~/blog/bp && gnome-terminal --  bash -c './begin;bash' && xdotool windowminimize $(xdotool getactivewindow)
+
+
+echo "open work path with webstorm.."
+
+cd ~/work/bff && nohup  webstorm ./ >/dev/null 2>&1 &

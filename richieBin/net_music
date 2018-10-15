@@ -1,0 +1,8 @@
+#!/bin/bash
+for((i=1;i<=300;i++))
+do
+  xdotool key ctrl+shift+F11
+  sleep 90;
+done
+
+echo "task is end"
